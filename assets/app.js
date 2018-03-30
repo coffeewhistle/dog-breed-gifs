@@ -36,9 +36,10 @@ $(document).ready(function () {
                 var dogDiv = $("<div>");
                 var p = $("<p>").text("Rating: " + results[i].rating).addClass("my-0");
                 dogImage = $("<img>").attr("src", results[i].images.fixed_height_still.url);
-                dogImage.attr("data-still", response[i].images.fixed_height_still.url);
-                dogImage.attr("data-animate", response[i].images.fixed_height.url);
+                dogImage.attr("data-still", results[i].images.fixed_height_still.url);
+                dogImage.attr("data-animate", results[i].images.fixed_height.url);
                 dogImage.attr("data-state", "still");
+                dogImage.addClass("gif");
                 dogDiv.addClass("my-3 col-lg-4");
                 dogDiv.append(p);
                 dogDiv.append(dogImage);
@@ -52,6 +53,22 @@ $(document).ready(function () {
         var dog = $("#dog-input").val().trim();
         topics.push(dog);
         renderButtons();
+    });
+
+    $(".gif").on("click", function () {
+        var state = $(this).attr("data-state");
+        var animated = $(this).attr("data-animate");
+        var stilled = $(this).attr("data-still");
+        
+        if (state === "still") {
+            $(this).attr("src", animated);
+            $(this).attr("data-state", "animate");
+            // console.log(state);
+        } else {
+            $(this).attr("src", stilled);
+            $(this).attr("data-state", "still");
+            // console.log(state);
+        }
     });
 
     renderButtons();
