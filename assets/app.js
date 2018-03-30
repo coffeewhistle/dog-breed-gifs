@@ -31,11 +31,11 @@ $(document).ready(function () {
             console.log(response);
             var results = response.data;
 
-            for (i = 0; i < topics.length; i++) {
+            for (i = 0; i < 10; i++) {
                 var dogDiv = $("<div>");
                 var p = $("<p>").text("Rating: " + results[i].rating).addClass("my-0");
                 dogImage = $("<img>").attr("src", results[i].images.fixed_height.url);
-                dogDiv.addClass("my-3");
+                dogDiv.addClass("my-3 col-4");
                 dogDiv.append(p);
                 dogDiv.append(dogImage);
                 $("#dogs").append(dogDiv);

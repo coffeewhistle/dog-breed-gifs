@@ -16,15 +16,21 @@
 
     <div id="dogButtons"></div>
 
-    <form id="dog-form">
-        <label for="dog-input">Add a dog breed</label>
-        <input type="text" id="dog-input">
-        <br>
-        <input type="submit" id="addDog" value="Submit">
-    </form>
-
-    <div id="dogs"></div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <div id="dogs" class="row"></div>
+            </div>
+            <div class="col-4">
+                <form id="dog-form">
+                    <label for="dog-input">Add a dog breed</label>
+                    <input type="text" id="dog-input">
+                    <br>
+                    <input class="btn btn-secondary mx-2" type="submit" id="addDog" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
